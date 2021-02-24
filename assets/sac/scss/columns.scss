@@ -1,0 +1,63 @@
+.columns {
+  display: flex;
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+  &.col-centered {
+    justify-content: center
+  }
+  &.col-multiline {
+    flex-wrap: wrap;
+  }
+  &.col-vcentered {
+    align-items: center;
+  }
+}
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  &.col-narrow {
+    flex: none;
+  }
+  &.col-full {
+    flex: none;
+    width: 100%;
+  }
+  @for $i from 1 to 20 {
+    &.col-#{$i * 5} {
+      flex: none;
+      width: #{$i * 5%};
+    }
+    &.col-off-#{$i * 5} {
+      margin-left: #{$i * 5%};
+    }
+  }
+  &.col-33 {
+    flex: none;
+    width: 33.3333%;
+  }
+  &.col-66 {
+    flex: none;
+    width: 66.6666%;
+  }
+  &.col-off-33 {
+    margin-left: 33.3333%;
+  }
+  &.col-off-66 {
+    margin-left: 66.6666%;
+  }
+
+  @for $i from 1 through 12 {
+    &.col-#{$i}-12 {
+      flex: none;
+      width: percentage($i / 12);
+    }
+    &.is-offset-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+  }
+}

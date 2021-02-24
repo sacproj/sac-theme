@@ -1,0 +1,99 @@
+@each $color, $values in $themePalette {
+  .text-highlight-#{$color} {
+    padding: 0 3px;
+    margin: 0 2px;
+    color: nth($values, 2) !important;
+    background-color: nth($values, 1);
+
+    &.rounded {
+      padding: 0px 15px;
+      border-radius: 15px;
+    }
+  }
+
+  .text-#{$color} {
+    color: nth($values, 1) !important;
+  }
+
+  .bg-#{$color} {
+    background: nth($values, 1) !important;
+  }
+
+  .reveal .slides section .fragment.fragment-text-#{$color} {
+    opacity: 1;
+    visibility: inherit;
+
+    &.visible {
+      color: nth($values, 1) !important;
+    }
+  }
+
+  .reveal .slides section .fragment.fragment-current-text-#{$color} {
+    opacity: 1;
+    visibility: inherit;
+
+    &.current-fragment {
+      color: nth($values, 1) !important;
+    }
+  }
+
+  .reveal .slides section .fragment.fragment-bg-#{$color} {
+    opacity: 1;
+    visibility: inherit;
+
+    &.visible {
+      background: nth($values, 1) !important;
+    }
+  }
+
+  .reveal .slides section .fragment.fragment-current-bg-#{$color} {
+    opacity: 1;
+    visibility: inherit;
+
+    &.current-fragment {
+      background: nth($values, 1) !important;
+    }
+  }
+
+  .reveal .slides section .fragment.fragment-text-highlight-#{$color} {
+    opacity: 1;
+    visibility: inherit;
+    padding: 0 3px;
+    margin: 0 2px;
+
+    &.visible {
+      color: nth($values, 2) !important;
+      background-color: nth($values, 1);
+
+      &.rounded {
+        padding: 0px 15px;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .reveal .slides section .fragment.fragment-current-text-highlight-#{$color} {
+    opacity: 1;
+    visibility: inherit;
+    padding: 0 3px;
+    margin: 0 2px;
+
+    &.current-fragment {
+      color: nth($values, 2) !important;
+      background-color: nth($values, 1);
+
+      &.rounded {
+        padding: 0px 15px;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+.bg-none {
+  background: none !important;
+}
+
+.table-zebra tbody tr:nth-child(2n+1) {
+  background-color: rgba(0, 0, 0, 0.05);
+}

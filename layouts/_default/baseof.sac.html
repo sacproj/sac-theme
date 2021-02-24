@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Editorial information -->
+    {{ with $.Param "title" }}<title>{{ . }}</title>{{ end }}
+    {{ with $.Param "author" }}<meta name="author" content="{{ . }}">{{ end }}
+    {{ with $.Param "description" }}<meta name="description" content="{{ . }}">{{ end }}
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="{{ "icons/favicon.png" | relURL }}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ "libs/reveal.js/reset.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "libs/reveal.js/reveal.css" | relURL }}">
+    {{ $sass := resources.Get "sac/scss/theme.scss" }}
+    {{ $toCSSoptions := dict "targetPath" "sac.css" "outputStyle" "compressed" }}
+    {{ $style := $sass | resources.ExecuteAsTemplate "sac.scss" . | resources.ToCSS $toCSSoptions }}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet" id="theme"> <!-- id="theme" is required for selection in "menu" plugin -->
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="{{ "libs/reveal.js/plugin/highlight/highlight.css" | relURL }}" id="highlight-theme">
+    <link rel="stylesheet" href="{{ "libs/asciinema-player/asciinema-player.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "fontawesome/css/all.min.css" | relURL }}">
+
+    <!-- To insert markup before the closing head tag for all presentations,
+         create layouts/partials/sac/head.html -->
+    {{- partial "sac/head" . -}}
+
+    <!-- To insert markup at the end of the head tag for a specific presentation,
+         create layouts/partials/{section}/sac/head.html -->
+    {{- $sectionHeadPartial := printf "%s/sac/head" (.Page.Section | default "home") -}}
+    {{- if fileExists (printf "layouts/partials/%s.html" $sectionHeadPartial) -}}{{ partial $sectionHeadPartial . }}{{- end }}
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown
+          data-separator="^\r?\n---\r?\n"
+          data-separator-vertical="^\r?\n------\r?\n"
+          data-separator-notes="[n|N]otes?:">
+          <script type="text/template">{{- block "main" . -}}{{- end -}}</script>
+        </section>
+      </div>
+
+      <!-- To insert markup at the end of the .reveal tag for all presentations,
+           create layouts/partials/sac/end.html -->
+      {{- partial "sac/end" . -}}
+
+      <!-- To insert markup at the end of the .reveal tag for a specific presentation,
+           create layouts/partials/{section}/sac/end.html -->
+      {{- $sectionHeadPartial := printf "%s/sac/end" (.Page.Section | default "home") -}}
+      {{- if fileExists (printf "layouts/partials/%s.html" $sectionHeadPartial) -}}{{ partial $sectionHeadPartial . }}{{- end }}
+    </div>
+
+    <!-- Load Reveal.js and other javascripts -->
+    <script src="{{ "libs/reveal.js/reveal.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/highlight/highlight.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/markdown/markdown.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/math/math.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/notes/notes.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/search/search.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/zoom/zoom.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/menu/menu.js" | relURL }}"></script>
+    <script src="{{ "libs/asciinema-player/asciinema-player.js" | relURL }}"></script>
+    <script src="{{ "libs/typed.js/typed.js" | relURL }}"></script>
+    <script src="{{ "libs/chart.js/chart.js" | relURL }}"></script>
+    <script src="{{ "libs/reveal.js/plugin/chart/plugin.js" | relURL }}"></script>
+
+    <!-- Initialize Reveal.js -->
+    {{ $js := resources.Get "sac/js/index.js" }}
+    {{ $jsMinify := not (.Site.Params.debug.js | default false) }}
+    {{ $jsBuildOptions := dict "targetPath" "sac.js" "params" .Site.Params "minify" $jsMinify }}
+    {{ $script := $js | js.Build $jsBuildOptions }}
+		<script src="{{ $script.RelPermalink }}"></script>
+
+    <!-- To insert markup before the closing body tag for all presentations,
+         create layouts/partials/sac/body.html -->
+    {{- partial "sac/body" . -}}
+
+    <!-- To insert markup at the end of the head tag for a specific presentation,
+         create layouts/partials/{section}/sac/body.html -->
+    {{- $sectionBodyPartial := printf "%s/sac/body" (.Page.Section | default "home") -}}
+    {{- if fileExists (printf "layouts/partials/%s.html" $sectionBodyPartial) -}}{{ partial $sectionBodyPartial . }}{{- end }}
+
+    <!-- Load draw.io the latest -->
+    <script src="{{ "libs/drawio/viewer.min.js" | relURL }}"></script>
+  </body>
+</html>

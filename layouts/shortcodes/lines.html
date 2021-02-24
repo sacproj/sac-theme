@@ -1,0 +1,8 @@
+{{- $class := .Get 0 -}}
+{{- $fragmentIndex := .Get 1 | default 0 }}
+{{- range $index, $line := split .Inner "\n" -}}
+{{- if ne (len .) 0 -}}
+<div class="{{ $class }} fragment current-only" data-fragment-index="{{ $fragmentIndex }}">{{- $line | markdownify -}}</div>
+{{- $fragmentIndex = add $fragmentIndex 1 -}}
+{{- end -}}
+{{- end -}}

@@ -1,0 +1,17 @@
+name = "sac-theme"
+license = "MIT"
+licenselink = "https://github.com/reyerstudio/sac-theme/blob/master/LICENSE"
+description = "Slides as Code Theme"
+homepage = "https://github.com/reyerstudio/sac-theme"
+tags = ["presentation", "revealjs"]
+features = ["presentation"]
+min_version = "0.80.0"
+
+[author]
+  name = "Stéphane Este-Gracias"
+  homepage = "https://github.com/sestegra"
+
+[original]
+  name = "reveal.js"
+  homepage = "https://revealjs.com"
+  repo = "https://github.com/hakimel/reveal.js/"

@@ -1,0 +1,40 @@
+#boxed-text-box {
+  text-align: center;
+}
+
+#boxed-text-title-box {
+  font-size: 0.8em;
+  padding: 0.1em 0 0.3em 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#boxed-text-title {
+  font-size: 0.6em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+}
+
+#boxed-text {
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0.5em 1em 1em 1em;
+}
+
+#boxed-text-box.rounded {
+  border-radius: 18px;
+}
+
+#boxed-text-box.rounded div {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+#boxed-text-box.waved {
+  border-radius: 15px 50px;
+}
+
+#boxed-text-box.waved div {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 50px;
+}

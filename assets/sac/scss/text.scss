@@ -1,0 +1,360 @@
+// Size
+@for $i from 1 through 50 {
+  @if $i < 10 {
+    .text-0#{$i} {
+      font-size: #{ $i * 0.1em} !important;
+    }
+
+    .reveal .slides section .fragment.fragment-text-0#{$i} {
+      opacity: 1;
+      visibility: inherit;
+
+      &.visible {
+        font-size: #{ $i * 0.1em} !important;
+      }
+    }
+
+    .reveal .slides section .fragment.fragment-current-text-0#{$i} {
+      opacity: 1;
+      visibility: inherit;
+
+      &.current-fragment {
+        font-size: #{ $i * 0.1em} !important;
+      }
+    }
+  } @else {
+    .text-#{$i} {
+      font-size: #{ $i * 0.1em} !important;
+    }
+
+    .reveal .slides section .fragment.fragment-text-#{$i} {
+      opacity: 1;
+      visibility: inherit;
+
+      &.visible {
+        font-size: #{ $i * 0.1em} !important;
+      }
+    }
+
+    .reveal .slides section .fragment.fragment-current-text-#{$i} {
+      opacity: 1;
+      visibility: inherit;
+
+      &.current-fragment {
+        font-size: #{ $i * 0.1em} !important;
+      }
+    }
+  }
+}
+
+// Alignement
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.reveal .slides section .fragment.fragment-text-center {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    text-align: center !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-center {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    text-align: center !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-left {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    text-align: left !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-left {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    text-align: left !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-right {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    text-align: right !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-right {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    text-align: right !important;
+  }
+}
+
+// Style
+.text-lighter {
+  font-weight: lighter !important;
+}
+
+.text-normal {
+  font-weight: normal !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-italic {
+  font-style: italic !important;
+}
+
+.text-overstrike {
+  text-decoration: line-through !important;
+}
+
+.reveal .slides section .fragment.fragment-text-lighter {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    font-weight: lighter !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-lighter {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    font-weight: lighter !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-normal {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    font-weight: normal !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-normal {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    font-weight: normal !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-bold {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    font-weight: bold !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-bold {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    font-weight: bold !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-italic {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    font-style: italic !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-italic {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    font-style: italic !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-overstrike {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    text-decoration: line-through !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-overstrike {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    text-decoration: line-through !important;
+  }
+}
+
+// Case
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.text-smallcaps {
+  font-variant: small-caps !important;
+}
+
+.reveal .slides section .fragment.fragment-text-uppercase {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    text-transform: uppercase !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-uppercase {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    text-transform: uppercase !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-lowercase {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    text-transform: lowercase !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-lowercase {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    text-transform: lowercase !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-capitalize {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    text-transform: capitalize !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-capitalize {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    text-transform: capitalize !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-smallcaps {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    font-variant: small-caps !important;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-smallcaps {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    font-variant: small-caps !important;
+  }
+}
+
+// Font
+.text-main {
+  font-family: $mainFont;
+}
+
+.text-code {
+  font-family: $codeFont;
+}
+
+.reveal .slides section .fragment.fragment-text-main {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    font-family: $mainFont;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-main {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    font-family: $mainFont;
+  }
+}
+
+.reveal .slides section .fragment.fragment-text-code {
+  opacity: 1;
+  visibility: inherit;
+
+  &.visible {
+    font-family: $codeFont;
+  }
+}
+
+.reveal .slides section .fragment.fragment-current-text-code {
+  opacity: 1;
+  visibility: inherit;
+
+  &.current-fragment {
+    font-family: $codeFont;
+  }
+}

@@ -1,0 +1,23 @@
+{{- $code := sha1 .Inner -}}
+<div class="typing {{ with .Get "class" }}{{ . }}{{ end }}"
+     data-code="{{ $code }}"
+     {{ with (.Get "type-speed" | default "50" ) }} data-type-speed="{{ . }}" {{ end }}
+     {{ with (.Get "start-delay" | default "0" ) }} data-start-delay="{{ . }}" {{ end }}
+     {{ with (.Get "back-speed" | default "30" ) }} data-back-speed="{{ . }}" {{ end }}
+     {{ with (.Get "smart-backspace" | default "true" ) }} data-smart-backspace="{{ . }}" {{ end }}
+     {{ with (.Get "shuffle" | default "false" ) }} data-shuffle="{{ . }}" {{ end }}
+     {{ with (.Get "back-delay" | default "1000" ) }} data-back-delay="{{ . }}" {{ end }}
+     {{ with (.Get "loop" | default "true" ) }} data-loop="{{ . }}" {{ end }}
+     {{ with (.Get "loop-count" | default "Infinity" ) }} data-loop-count="{{ . }}" {{ end }}
+     {{ with (.Get "show-cursor" | default "true" ) }} data-show-cursor="{{ . }}" {{ end }}
+     {{ with (.Get "cursor-char" | default "|" ) }} data-cursor-char="{{ . }}" {{ end }}
+>
+<div id="typed-strings-{{ $code }}">
+  {{- range $index, $line := split .Inner "\n" -}}
+  {{- if ne (len .) 0 -}}
+  <p>{{- $line | markdownify -}}</p>
+  {{- end -}}
+  {{- end -}}
+  </div>
+  <span id="typed-{{ $code }}"></span>
+</div>

@@ -1,0 +1,11 @@
+{{- $maxIndex := sub (len .) 1 }}
+{{- range $index, $slide := . }}
+{{- if .Content -}}
+{{- if ne (len .Content) 0 -}}
+{{ $slide.Content }}
+{{- if ne $index $maxIndex }}
+{{ "\n---\n" }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}

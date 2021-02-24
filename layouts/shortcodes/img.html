@@ -1,0 +1,6 @@
+<figure>
+{{- $caption := .Get "caption" -}}
+{{- $captionClass := .Get "caption-class" -}}
+<img src="{{ .Get "src" | relURL }}" {{ with .Get "alt" }}alt="{{ . }}"{{ end }} {{ with .Get "height" }}height="{{ . }}"{{ end }} {{ with .Get "width" }}width="{{ . }}"{{ end }} {{ with .Get "class" }}class="{{ . }}"{{ end }} {{ with .Get "style" }}style="{{ . }}"{{ end }}>
+{{- with $caption -}}<figcaption class="{{ $captionClass }}">{{ . }}</figcaption>{{- end -}}
+</figure>

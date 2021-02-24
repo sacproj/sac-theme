@@ -1,0 +1,41 @@
+{{- $src := .Get "src"}}
+{{- $lang := .Get "lang" -}}
+{{- $focus := .Get "focus" -}}
+{{- $lineNumbers := .Get "line-numbers" -}}
+{{- $stretch := .Get "stretch" | default "false" -}}
+
+{{- $class := "" -}}
+{{- if $lang -}}
+{{- $class = $lang -}}
+{{- end -}}
+
+{{- $dataLineNumbers := "" -}}
+{{- if ne $lineNumbers "true" -}}
+{{- $class = print $class " no-line-numbers" -}}
+{{- end -}}
+
+{{- if $focus -}}
+{{- $dataLineNumbers = $focus -}}
+{{- end -}}
+
+{{- $srcFile := "" -}}
+{{- if $src -}}
+{{- $srcFile = print "static/" $src -}}
+{{- end -}}
+
+{{- $preClass := "" -}}
+{{- if eq $stretch "true" -}}
+{{- $preClass = "stretch" -}}
+{{- end -}}
+
+<pre class="{{ $preClass }}"><code {{ with $class }} class="{{ . }}"{{ end }} data-line-numbers="{{ $dataLineNumbers }}" data-fragment-index="0">
+{{- if $src -}}
+{{- if fileExists $srcFile -}}
+{{- readFile $srcFile -}}
+{{- else -}}
+{{- print $src ": No such file" -}}
+{{- end }}
+{{- else -}}
+{{- trim .Inner "\n" -}}
+{{- end }}
+</code></pre>

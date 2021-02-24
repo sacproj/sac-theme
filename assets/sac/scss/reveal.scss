@@ -1,0 +1,54 @@
+// ---------------------------------------------
+// Reveal.js Override Styles
+// ---------------------------------------------
+// Avoid jumping/flickering and wrong position of fixed position elements
+.reveal .slides>section {
+  perspective: none;
+}
+
+// Clean img
+.reveal section img {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+// Quote
+.reveal blockquote {
+  width: auto;
+  padding: 17px;
+  border-radius: 17px;
+  background: lighten($mainColor, 80%);
+}
+
+.quote-attribution {
+  font-size: 0.6em !important;
+}
+
+// Numbered list
+.reveal ol li {
+  margin-left: 0;
+  padding-right: 0;
+  list-style-type: none;
+  position: relative;
+  counter-increment: step-counter;
+}
+
+.reveal ol li::before {
+  color: $backgroundColor;
+  font-size: 80%;
+  font-weight: bold;
+  padding: 3px 10px;
+  margin-right: 15px;
+  border-radius: 3px;
+  background-color: $mainColor;
+  content: counter(step-counter);
+}
+
+.li-nested-item {
+  margin-left: 1em !important;
+}
+
+li p {
+  display: inline;
+}

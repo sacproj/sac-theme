@@ -1,0 +1,94 @@
+outputFormats:
+  sac:
+    baseName: "index"
+    mediaType: "text/html"
+    isHTML: true
+
+params:
+  title: "Slides as Code"
+  author: "Stéphane Este-Gracias"
+  description: "Code your Presentation Slides"
+  theme:
+    # "light" or "dark" mode
+    mode:
+      light: "#fff"
+    font_size:
+      default: "50px"
+      code: "0.55em"
+      chart: 24
+    main_font:
+      name: "Open Sans, sans-serif"
+      css: "Open Sans.css"
+    code_font:
+      name: "Hack, monospace"
+      css: "hack.css"
+    heading_font:
+      name: "Raleway, sans-serif"
+      css: "Raleway.css"
+    box_shadow: "0px 5px 1500px rgba(0, 0, 0, 0.15)"
+    colors:
+      background: "#fff"
+      main: "#181828"
+      heading: "#ef476f"
+      link: "#ef476f"
+      link_hover: "lighten( #ef476f, 15% )"
+      selection: "#fff"
+      selection_background: "#ef476f"
+      code: "#fff"
+      code_background: "#181828"
+      chart:
+        palette:
+          - "#ef476f"
+          - "#ffd166"
+          - "#06d6a0"
+          - "#118ab2"
+          - "#073b4c"
+          - "#181828"
+          - "#c6c6c6"
+          - "#878787"
+        fill:
+          - "rgba(239, 71, 111, 0.2)"
+          - "rgba(255, 209, 102, 0.2)"
+          - "rgba(6, 214, 160, 0.2)"
+          - "rgba(17, 138, 178, 0.2)"
+          - "rgba(7, 59, 76, 0.2)"
+          - "rgba(24, 24, 40, 0.2)"
+          - "rgba(198, 198, 198, 0.2)"
+          - "rgba(135, 135, 135, 0.2)"
+        grid: "#c6c6c6"
+    palette:
+      black:
+        - "#181828"
+        - "#fff"
+      white:
+        - "#fff"
+        - "#181828"
+      darkgray:
+        - "#878787"
+        - "#fff"
+      lightgray:
+        - "#c6c6c6"
+        - "#181828"
+      pink:
+        - "#ef476f"
+        - "#fff"
+      yellow:
+        - "#ffd166"
+        - "#fff"
+      green:
+        - "#06d6a0"
+        - "#fff"
+      electric:
+        - "#118ab2"
+        - "#fff"
+      blue:
+        - "#073b4c"
+        - "#fff"
+
+  geometry:
+    width: 1920
+    height: 1080
+    margin: 0.0
+    scale:
+      min: 0.2
+      max: 2.0

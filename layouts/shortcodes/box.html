@@ -1,0 +1,14 @@
+{{- if len .Params | eq 2 -}}
+<div id="boxed-text-box" class="{{ .Get 0 }}">
+  {{- with .Get 1 -}}
+  <div id="boxed-text-title-box">
+    <span id="boxed-text-title">{{- . -}}</span>
+  </div>
+  {{- end -}}
+  <p id="boxed-text">{{- .Inner -}}</p>
+</div>
+{{- else -}}
+<div id="boxed-text-box" class="{{ .Get 0 }}">
+  <p id="boxed-text">{{- .Inner -}}</p>
+</div>
+{{- end -}}

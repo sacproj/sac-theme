@@ -1,0 +1,67 @@
+{{- $menuTitle := .Get "menu-title" -}}
+{{- $bg := .Get "bg" -}}
+{{- $bgColor := .Get "bg-color" -}}
+{{- if $bgColor -}}
+{{- if isset .Site.Params.theme.palette $bgColor -}}
+{{- $color := index .Site.Params.theme.palette $bgColor -}}
+{{- $bgColor = index $color 0 -}}
+{{- end -}}
+{{- end -}}
+{{- $bgImage := .Get "bg-image" -}}
+{{- $bgVideo := .Get "bg-video" -}}
+{{- $bgVideoLoop := .Get "bg-video-loop" -}}
+{{- $bgVideoMuted := .Get "bg-video-muted" -}}
+{{- $bgIframe := .Get "bg-iframe" -}}
+{{- $iframe := .Get "iframe" -}}
+{{- $bgSize := .Get "bg-size" -}}
+{{- $bgPosition := .Get "bg-position" -}}
+{{- $bgRepeat := .Get "bg-repeat" -}}
+{{- $bgOpacity := .Get "bg-opacity" -}}
+{{- $transition := .Get "transition" -}}
+{{- $bgTransition := .Get "bg-transition" -}}
+
+{{- with $menuTitle }}
+{{ printf "<!-- .slide: data-menu-title=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bg  }}
+{{ printf "<!-- .slide: data-background=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgColor  }}
+{{ printf "<!-- .slide: data-background-color=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgImage  }}
+{{ printf "<!-- .slide: data-background-image=\"%s\" -->" ( relURL . ) | safeHTML }}
+{{- end -}}
+{{- with $bgVideo  }}
+{{ printf "<!-- .slide: data-background-video=\"%s\" -->" ( relURL . ) | safeHTML }}
+{{- end -}}
+{{- with $bgVideoLoop  }}
+{{ printf "<!-- .slide: data-background-video-loop=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgVideoMuted  }}
+{{ printf "<!-- .slide: data-background-video-muted=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgIframe  }}
+{{ printf "<!-- .slide: data-background-iframe=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $iframe  }}
+{{ printf "<!-- .slide: data-iframe=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgSize  }}
+{{ printf "<!-- .slide: data-background-size=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgPosition  }}
+{{ printf "<!-- .slide: data-background-position=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgRepeat  }}
+{{ printf "<!-- .slide: data-background-repeat=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgOpacity  }}
+{{ printf "<!-- .slide: data-background-opacity=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $transition  }}
+{{ printf "<!-- .slide: data-transition=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- with $bgTransition  }}
+{{ printf "<!-- .slide: data-background-transition=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}

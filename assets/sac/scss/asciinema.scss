@@ -1,0 +1,15 @@
+div.asciinema-player {
+  box-shadow: $boxShadow;
+}
+
+// Don't hide control-bar
+.asciinema-player-wrapper .control-bar {
+  bottom: 0px !important;
+}
+
+// Override .reveal pre from theme.scss
+.reveal asciinema-player pre {
+  margin: 0px;
+  box-shadow: none;
+  padding-bottom: 32px;
+}

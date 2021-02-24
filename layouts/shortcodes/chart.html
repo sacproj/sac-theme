@@ -1,0 +1,13 @@
+{{- $src := .Get "src"}}
+{{- if $src -}}
+{{- if not (fileExists $src) -}}
+{{- $src = print "static/" $src -}}
+{{- end -}}
+{{- end -}}
+<canvas data-chart="{{ with .Get "type" }}{{ . }}{{ end }}">
+{{- if $src -}}
+{{ printf "<!-- %s -->" (readFile $src) | safeHTML }}
+{{- else -}}
+{{ .Inner }}
+{{- end }}
+</canvas>

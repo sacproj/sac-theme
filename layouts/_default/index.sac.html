@@ -1,0 +1,3 @@
+{{- define "main" -}}
+{{- partial "sac/slides" (union (slice .Page) (where .Site.RegularPages "Type" "home")) -}}
+{{- end -}}

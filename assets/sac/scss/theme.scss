@@ -1,0 +1,75 @@
+// Reveal default mixins and settings -----------------
+@import "template/mixins";
+@import "template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts (path is relative to target folder, i.e. not the folder containing the code)
+@import url("fonts/{{ .Site.Params.theme.main_font.css }}");
+@import url("fonts/{{ .Site.Params.theme.heading_font.css }}");
+@import url("fonts/{{ .Site.Params.theme.code_font.css }}");
+
+// Variable from config.yaml
+$themePalette: (
+{{- range $color, $values := .Site.Params.theme.palette -}}
+  "{{ $color }}": ( {{ index $values 0 }}, {{ index $values 1 }} ),
+{{- end -}}
+);
+
+// Override theme settings (see ../template/settings.scss)
+// ---------------------------------------------
+// Background of the presentation
+$backgroundColor: {{ .Site.Params.theme.colors.background }};
+
+// Primary/body text
+$mainFont: {{ .Site.Params.theme.main_font.name }};
+
+$mainFontSize: {{ .Site.Params.theme.font_size.default }};
+$mainColor: {{ .Site.Params.theme.colors.main }};
+
+// Vertical spacing between blocks of text
+$blockMargin: 20px;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
+$headingFont: {{ .Site.Params.theme.heading_font.name }};
+$headingColor: {{ .Site.Params.theme.colors.heading }};
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$headingFontWeight: 700;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+$codeFont: {{ .Site.Params.theme.code_font.name }};
+$codeFontSize: {{ .Site.Params.theme.font_size.code }};
+
+// Links and actions
+$linkColor: {{ .Site.Params.theme.colors.link }};
+$linkColorHover: {{ .Site.Params.theme.colors.link_hover }};
+
+// Text selection
+$selectionBackgroundColor: {{ .Site.Params.theme.colors.selection_background }};
+$selectionColor: {{ .Site.Params.theme.colors.selection }};;
+
+// Box shadow
+$boxShadow: {{ .Site.Params.theme.box_shadow }};
+
+{{- with .Site.Params.theme.mode.dark -}}
+@include light-bg-text-color({{ . }});
+{{- end -}}
+{{- with .Site.Params.theme.mode.light -}}
+@include dark-bg-text-color({{ . }});
+{{- end -}}
+
+// Reveal Theme template -----------------------
+@import "template/theme";
+// ---------------------------------------------
+
+// Customisation -------------------------------
+@import "all";
+// ---------------------------------------------

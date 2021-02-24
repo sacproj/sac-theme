@@ -1,0 +1,1 @@
+<audio {{ if eq (.Get "autoplay" | default "true") "true" }}data-autoplay{{ end }} src="{{ .Get "src" | relURL }}">

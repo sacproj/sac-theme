@@ -1,0 +1,21 @@
+{{- $src := .Get "src" -}}
+{{- $page := .Get "page" -}}
+{{- $layers := .Get "layers" -}}
+{{- if $src -}}
+{{- if not (fileExists $src) -}}
+{{- $src = print "static/" $src -}}
+{{- end -}}
+<!-- {{- $class := "drawio" -}} -->
+{{- $class := "mxgraph" -}}
+<div class="{{ $class }}" style="max-width:100%;" data-mxgraph="{&quot;lightbox&quot;:false,
+{{- with $page -}}
+&quot;page&quot;:&quot;{{- $page -}}&quot;,
+{{- end -}}
+{{- with $layers -}}
+&quot;layers&quot;:&quot;{{- $layers -}}&quot;,
+{{- end -}}
+&quot;xml&quot;:&quot;
+{{- $data := readFile $src -}}
+{{- replace $data "\"" "\\\"" -}}
+&quot;}"></div>
+{{- end -}}

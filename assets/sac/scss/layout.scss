@@ -1,0 +1,87 @@
+// Display
+.display-inline-block {
+  display: inline-block;
+}
+
+// Span
+@for $i from 1 through 20 {
+  .span-#{$i * 5} {
+    width: #{$i * 5%} !important;
+  }
+}
+
+// Stack
+.z-pos-100 {
+  z-index: 100 !important;
+}
+
+.z-pos-200 {
+  z-index: 200 !important;
+}
+
+.z-pos-300 {
+  z-index: 300 !important;
+}
+
+.z-pos-400 {
+  z-index: 400 !important;
+}
+
+.z-pos-500 {
+  z-index: 500 !important;
+}
+
+.z-neg-100 {
+  z-index: -100 !important;
+}
+
+.z-neg-200 {
+  z-index: -200 !important;
+}
+
+.z-neg-300 {
+  z-index: -300 !important;
+}
+
+.z-neg-400 {
+  z-index: -400 !important;
+}
+
+.z-neg-500 {
+  z-index: -500 !important;
+}
+
+// Margin
+@for $i from 1 through 100 {
+  .margin-top-#{$i} {
+    margin-top: #{$i * 1%} !important;
+  }
+
+  .margin-bottom-#{$i} {
+    margin-bottom: #{$i * 1%} !important;
+  }
+
+  .margin-left-#{$i} {
+    margin-left: #{$i * 1%} !important;
+  }
+
+  .margin-right-#{$i} {
+    margin-right: #{$i * 1%} !important;
+  }
+
+  .margin-top-neg-#{$i} {
+    margin-top: #{$i * -1%} !important;
+  }
+
+  .margin-bottom-neg-#{$i} {
+    margin-bottom: #{$i * -1%} !important;
+  }
+
+  .margin-left-neg-#{$i} {
+    margin-left: #{$i * -1%} !important;
+  }
+
+  .margin-right-neg-#{$i} {
+    margin-right: #{$i * -1%} !important;
+  }
+}

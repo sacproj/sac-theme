@@ -1,0 +1,3 @@
+<video {{ if eq (.Get "autoplay" | default "true") "true" }}data-autoplay{{ end }} {{ with .Get "height" }}height="{{ . }}"{{ end }} {{ with .Get "width" }}width="{{ . }}"{{ end }} {{ if eq (.Get "controls" | default "true") "true" }}controls{{ end }} {{ with .Get "class" }}class="{{ . }}"{{ end }} {{ with .Get "style" }}style="{{ . }}"{{ end }}>
+  <source src="{{ .Get "src" | relURL }}">
+</video>

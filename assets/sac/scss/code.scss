@@ -1,0 +1,14 @@
+// no-line-numbers
+.reveal .hljs.no-line-numbers .hljs-ln-numbers {
+  display: none;
+}
+
+.reveal pre {
+  font-size: $codeFontSize;
+  box-shadow: $boxShadow;
+
+  code {
+    overflow: hidden;
+    max-height: 60vh;
+  }
+}

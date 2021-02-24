@@ -1,0 +1,7 @@
+<blockquote class="quote-text">
+  <i class="fa fa-quote-left" aria-hidden="true"></i>&nbsp;{{ .Inner | markdownify }}
+  {{- with .Get 0 -}}
+    <br>
+    <span class="quote-attribution">- {{ . }}</span>
+  {{- end -}}
+</blockquote>

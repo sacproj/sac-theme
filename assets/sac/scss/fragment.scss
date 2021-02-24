@@ -1,0 +1,12 @@
+// current-only
+.reveal .slides section {
+  .fragment.current-only {
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+
+  .fragment.current-only.current-fragment {
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+{{- define "main" -}}
+{{- if eq ( .Site.Params.reveal_code | default false) false -}}
+{{ partial "sac/slides" (slice .Page) }}
+{{ partial "sac/slides" .Site.RegularPages }}
+{{- else -}}
+{{ partial "sac/slides_code" (slice .Page) }}
+{{ partial "sac/slides_code" .Site.RegularPages }}
+{{- end -}}
+{{- end -}}

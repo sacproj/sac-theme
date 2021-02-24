@@ -1,0 +1,52 @@
+{{- $slideWidth := int .Site.Params.geometry.width -}}
+{{- $slideHeight := int .Site.Params.geometry.height -}}
+
+<!-- Grid Layouts -->
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $x := .Get "x" -}}
+{{- $y := .Get "y" -}}
+
+<!-- Grid Backgrounds -->
+{{- $bgColor := .Get "bg-color" -}}
+
+<!-- Compute -->
+{{- $class := "" -}}
+{{- $style := "position: fixed; " -}}
+
+{{- if $width -}}
+{{- $width = div (mul (int $width) $slideWidth) 100 -}}
+{{- $style = print $style "width: " $width "px; " -}}
+{{- end -}}
+{{- if $height -}}
+{{- $height = div (mul (int $height) $slideHeight) 100 -}}
+{{- $style = print $style "height: " $height "px; " -}}
+{{- end -}}
+{{- if $x -}}
+{{- $x = div (mul (int $x) $slideWidth) 100 -}}
+{{- if ge $x 0 }}
+{{- $style = print $style "left: " $x "px; " -}}
+{{- else -}}
+{{- $style = print $style "right: " (mul $x -1) "px; " -}}
+{{- end -}}
+{{- end -}}
+{{- if $y -}}
+{{- $y = div (mul (int $y) $slideHeight) 100 -}}
+{{- if ge $y 0 }}
+{{- $style = print $style "top: " $y "px; " -}}
+{{- else -}}
+{{- $style = print $style "bottom: " (mul $y -1) "px; " -}}
+{{- end -}}
+{{- end -}}
+
+{{- if isset .Site.Params.theme.palette $bgColor -}}
+{{- $color := index .Site.Params.theme.palette $bgColor -}}
+{{- $bgColor = index $color 0 -}}
+{{- end -}}
+{{- if $bgColor -}}
+{{- $style = print $style "background-color: " $bgColor "; " -}}
+{{- end -}}
+
+<div class="{{ $class }}" style="{{ $style | safeCSS }}" >
+{{ .Inner }}
+</div>

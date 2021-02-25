@@ -8,7 +8,7 @@
 # Inspirations
 This distribution is inspired by following Hugo themes and projects using Reveal.js
 - [Hugo Theme Reveal.js](https://github.com/RealOrangeOne/hugo-theme-revealjs)
-- [Revel Hugo](https://github.com/dzello/reveal-hugo)
+- [Reveal Hugo](https://github.com/dzello/reveal-hugo)
 - [GitPitch](https://gitpitch.com/)
 
 ## Differences with Reveals.js upstream

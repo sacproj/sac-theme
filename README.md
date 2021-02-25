@@ -3,7 +3,10 @@
 [Hugo](https://gohugo.io/) theme integrating an opinionated distribution of [Reveal.js](https://revealjs.com/).
 
 # Demo
-[Check out the live demo.](https://sacproj.github.io/demo/)
+Check out the [live demo](https://sacproj.github.io/demo/).
+
+# Documentation
+See online [documentation](https://sacproj.github.io/documentation/).
 
 # Inspirations
 This distribution is inspired by following Hugo themes and projects using Reveal.js

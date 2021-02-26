@@ -86,4 +86,4 @@ See the list and their relative licenses below.
 | code-server | [cdr/code-server](https://github.com/cdr/code-server) | [MIT license](https://github.com/cdr/code-server/blob/master/LICENSE.txt) |
 
 # Acknowledgments
-- [Data Essential](https://www.data-essential.com/) to give me the time to develop and maintain this project.
+- [Data Essential](https://www.data-essential.com/) to give time and means to develop and maintain this project.

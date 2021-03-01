@@ -1,4 +1,5 @@
 {{- $id := .Get "id" -}}
+{{- $hidden := .Get "hidden" -}}
 {{- $menuTitle := .Get "menu-title" -}}
 {{- $bg := .Get "bg" -}}
 {{- $bgColor := .Get "bg-color" -}}
@@ -23,6 +24,9 @@
 
 {{- with $id -}}
 {{ printf "<!-- .slide: id=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
+{{- if eq $hidden "true" -}}
+{{ print "<!-- .slide: data-visibility=\"hidden\" -->" | safeHTML }}
 {{- end -}}
 {{- with $menuTitle }}
 {{ printf "<!-- .slide: data-menu-title=\"%s\" -->" ( . ) | safeHTML }}

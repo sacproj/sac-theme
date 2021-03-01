@@ -1,3 +1,4 @@
+{{- $id := .Get "id" -}}
 {{- $menuTitle := .Get "menu-title" -}}
 {{- $bg := .Get "bg" -}}
 {{- $bgColor := .Get "bg-color" -}}
@@ -20,6 +21,9 @@
 {{- $transition := .Get "transition" -}}
 {{- $bgTransition := .Get "bg-transition" -}}
 
+{{- with $id -}}
+{{ printf "<!-- .slide: id=\"%s\" -->" ( . ) | safeHTML }}
+{{- end -}}
 {{- with $menuTitle }}
 {{ printf "<!-- .slide: data-menu-title=\"%s\" -->" ( . ) | safeHTML }}
 {{- end -}}

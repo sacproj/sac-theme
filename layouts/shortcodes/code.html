@@ -23,7 +23,7 @@
 {{- $srcFile = print "static/" $src -}}
 {{- end -}}
 
-{{- $preClass := "" -}}
+{{- $preClass := .Get "class" | default "" -}}
 {{- if eq $stretch "true" -}}
 {{- $preClass = "stretch" -}}
 {{- end -}}

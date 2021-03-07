@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 ### Added
 - Add `id` and `hidden` parameters in `slide` shortcode
+- Add `class` in `code` shortcode
 
 ## [2.0.0] - 2021-02-20
 ### Added
